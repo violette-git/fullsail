@@ -1,0 +1,109 @@
+/* Gaytan Glover
+26 Jan 2023
+Gaytan_Glover_CE07  */
+
+
+
+
+body {
+    background: linear-gradient(to top, #8a2be2 0%, #1a1a1a 90%);
+    border-left: 1.3px solid white;
+    border-right: 1.3px solid white;
+    border-top: 1.3px solid white;
+    height: 100vh;
+    margin: 0;
+    border-radius: 2.7px;
+}
+
+h1 {
+    text-align: center;
+    font-family:monospace;
+    color: aliceblue;
+
+}
+
+#calculator {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border: 1.3px solid white;
+    border-radius: 2.7px;
+    background: linear-gradient(to bottom, #8a2be2 0%, #1a1a1a 90%);
+    box-shadow: inset;
+    width:49.7vw;
+    margin: 0;
+    max-width: 575px
+}
+
+.padding {
+    padding: 10px;
+}
+
+#wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    /* border: 1.3px solid white; */
+    border-radius: 2.7px;
+}
+
+#graphic {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+img {
+    border: 1.3px solid white;
+    width: 49.7vw;
+    border-radius: 2.7px;
+    max-width: 575px
+}
+
+#an-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color:white;
+    font-family:monospace;
+    font-weight: bold;
+    font-size: large;
+}
+
+#results {
+    margin:5px;
+    color:orangered;
+    text-decoration: white underline;
+}
+
+#calculate{
+    margin:5px;
+    
+}
+
+#category {
+    color:orangered;
+    text-decoration: white underline;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#footer {
+    font-family:monospace;
+    font-weight: bold;
+    font-size: large;
+    color:white;
+}

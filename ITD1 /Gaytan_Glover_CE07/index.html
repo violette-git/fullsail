@@ -1,0 +1,64 @@
+<!-- Gaytan Glover
+26 Jan 2023
+Gaytan_Glover_CE07 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Body Mass Calculator</title>
+</head>
+
+<body>
+    <div  class="container-fluid">
+        <div id="wrap">
+
+            <h1>
+                Body Mass Calculator
+            </h1>
+            <form id="calculator">
+                <div class="padding">
+                    <input id="hFt" name="hFt" type="number" placeholder="feet" max="8.0"required></input>
+    
+                </div>
+                <div class="padding">
+                    <input id="hIn" name="hIn" type="number" placeholder="inches" max="11.0" required></input>
+    
+                </div>
+                <div class="padding">
+                    <input id="w" name="w" type="number" placeholder="weight" max="1400.0"required></input>
+    
+                </div>
+            </form>
+            <div id="an-box">
+                <button id="calculate">calculate</button>
+                <p id="cats" hidden>Your BMI is
+                    <span id="results">
+
+                    </span>%
+                </p>
+                <p id="cats2" hidden>
+                    You fall into the 
+                    <span id="category">
+                        
+                    </span>
+                    category for adults of your height
+                </p>
+
+
+            </div>
+            <div id="graphic"></div>
+        </div>
+    </div>
+    <footer>
+        <span id="footer">
+
+        </span>
+    </footer>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+
+</html>
