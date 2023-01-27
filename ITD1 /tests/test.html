@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <!-- The image with the "image" ID will be animated -->
+<img id="image" src="https://media.discordapp.net/attachments/1049054993354866740/1053111108153655377/ideasforyang_baby_girl_sticker_128-bit_die_cut_cartoon_bb5a3459-8f6a-4bb3-9d34-a46dfae0eb3c.png" width="200px" style="visibility: hidden;">
+
+<!-- The button that triggers the animation -->
+<button id="animate-button">Animate</button>
+
+<script>
+  // Get a reference to the image and button elements
+  var image = document.getElementById("image");
+  var animateButton = document.getElementById("animate-button");
+
+  // Create a timeline for the animation
+  var animation = gsap.timeline();
+
+  // Add a "from" animation to the timeline
+  // This animation starts from the bottom of the image and makes it visible
+  animation.from("#image", {
+    y: "100%",
+    visibility: "visible",
+    ease: "power1.in"
+  });
+
+  // Add a "to" animation to the timeline
+  // This animation makes the image transparent again
+  animation.to("#image", {
+    opacity: 0,
+    ease: "power1.out"
+  });
+
+  // Add a click event listener to the button
+  animateButton.addEventListener("click", function() {
+    // Play the animation timeline when the button is clicked
+    animation.play();
+  });
+</script>
+
+</body>
+</html>

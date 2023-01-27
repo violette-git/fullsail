@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voice Recognition</title>
+  <!-- <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+  <script type="javascript" src="{{url_for('static', filename='js/recorder.swf')}}"></script>
+
+  <script type="javascript" src="{{url_for('static', filename='js/recorder.js')}}"></script> -->
+
+
+</head>
+
+<body>
+  <h1>Voice Recognition</h1>
+  <h2>
+    goal: speak to chatgpt, recieve audio response
+  </h2>
+  <button id="recordButton">Record</button>
+  <button id="stopButton">Stop</button>
+  <button id="pauseButton">Pause</button>
+  <button id="sendButton">Send</button>
+  <button id="allow">allow?</button>
+
+  <div id="response"></div>
+  <!-- <script>
+      var recorder;
+
+      // Initialize the Recorder.js library
+      // Recorder.initialize({
+      //   swfSrc: "static/js/recorder.swf"
+      // });
+      function setupRecorder(swfSrc){
+        Recorder.initialize({
+          "swfSrc": swfSrc,
+          
+      });  
+}
+      
+      // Start recording when the user clicks the "Record" button
+      document.getElementById("record").addEventListener("click", function() {
+        recorder = new Recorder();
+        recorder.record();
+      });
+      
+      // Stop recording and send the audio data to the server when the user clicks the "Stop" button
+      document.getElementById("stop").addEventListener("click", function() {
+        recorder.stop();
+        recorder.exportWAV(function(audioData) {
+          // Send the audio data to the server via a POST request
+          var xhr = new XMLHttpRequest();
+          xhr.open("POST", "/audio", true);
+          xhr.send(audioData);
+        });
+      });
+
+      
+      window.onLoad(setupRecorder("../recorder.swf"))
+  </script> -->
+  <!-- <script>
+    
+    URL = window.URL || window.webkitURL;
+
+    var gumStream; 						
+    var rec; 							
+    var input; 							
+
+    
+    var AudioContext = window.AudioContext || window.webkitAudioContext;
+    var audioContext 
+
+    var recordButton = document.getElementById("recordButton");
+    var stopButton = document.getElementById("stopButton");
+    var pauseButton = document.getElementById("pauseButton");
+    var sendButton = document.getElementById("sendButton");
+
+    
+    
+    
+    function startRecording() {
+      console.log("recordButton clicked");
+      
+      
+      
+      var constraints = { audio: true, video:false }
+      
+      
+      navigator.mediaDevices.getUserMedia(constraints).then(function(stream) {
+        console.log("getUserMedia() success, stream created, initializing Recorder.js ...");
+        
+        
+        audioContext = new AudioContext();
+        
+        
+        input = audioContext.createMediaStreamSource(stream);
+        
+        
+        rec = new Recorder(input,{numChannels:1})
+        console.log('here')
+        
+        
+        rec.record()
+        
+        console.log("Recording started");
+        
+      }).catch(function(err) {
+        console.log(err)
+        
+      });
+      
+      function pauseRecording(){
+        console.log("pauseButton clicked rec.recording=",rec.recording );
+        if (rec.recording){
+          
+          rec.stop();
+          pauseButton.innerHTML="Resume";
+        }else{
+          
+          rec.record()
+          pauseButton.innerHTML="Pause";
+          
+        }
+      }
+      
+      function stopRecording() {
+        console.log("stopButton clicked");
+        
+        
+        pauseButton.innerHTML="Pause";
+        
+        
+        rec.stop();
+        
+        
+        gumStream.getAudioTracks()[0].stop();
+        
+        
+        rec.exportWAV(createDownloadLink);
+      }
+      
+      function createDownloadLink(blob) {
+        
+        var url = URL.createObjectURL(blob);
+        var au = document.createElement('audio');
+        var li = document.createElement('li');
+        var link = document.createElement('a');
+        
+        
+        var filename = new Date().toISOString();
+        
+        
+        au.controls = true;
+        au.src = url;
+        
+        
+        link.href = url;
+        link.download = filename+".mp3";
+        link.innerHTML = "Save to disk";
+        
+        
+        li.appendChild(au);
+        
+        
+        li.appendChild(document.createTextNode(filename+".mp3 "))
+        
+        
+        li.appendChild(link);
+        
+        
+        var upload = document.createElement('a');
+        upload.href="#";
+        upload.innerHTML = "Upload";
+        upload.addEventListener("click", function(event){
+          var xhr=new XMLHttpRequest();
+          xhr.onload=function(e) {
+            if(this.readyState === 4) {
+              console.log("Server returned: ",e.target.responseText);
+            }
+          };
+          var fd=new FormData();
+          fd.append("audio_data",blob, filename);
+          var xhr = new XMLHttpRequest();
+          xhr.open("POST", "/audio", true);
+          xhr.send(audioData);
+        })
+        li.appendChild(document.createTextNode (" "))
+        li.appendChild(upload)
+        
+        
+        recordingsList.appendChild(li);
+      }
+      function sendData(){
+        rec.stop();
+        recorder.exportWAV(function(audioData) {
+          
+          var xhr = new XMLHttpRequest();
+          xhr.open("POST", "/audio", true);
+          xhr.send(audioData);
+        });
+      }
+    }
+    recordButton.addEventListener("click", startRecording);
+    stopButton.addEventListener("click", stopRecording);
+    pauseButton.addEventListener("click", pauseRecording);
+    sendButton.addEventListener("click", sendData);
+    </script> -->
+  <!-- <script>
+
+    URL = window.URL || window.webkitURL;
+
+    var gumStream;
+    var rec;
+    var input;
+
+    // var AudioContext = window.AudioContext || window.webkitAudioContext;
+    // var audioContext = new AudioContext();
+
+    let audioContext = new (window.AudioContext)();
+
+
+    var recordButton = document.getElementById("recordButton");
+    var stopButton = document.getElementById("stopButton");
+    var pauseButton = document.getElementById("pauseButton");
+    var sendButton = document.getElementById("sendButton");
+
+    recordButton.addEventListener("click", startRecording);
+    stopButton.addEventListener("click", stopRecording);
+    pauseButton.addEventListener("click", pauseRecording);
+    sendButton.addEventListener("click", sendData);
+    allow.addEventListener("click", function() {
+      audioContext.resume()
+      console.log('allowd')
+    });
+
+    function startRecording() {
+      console.log("recordButton clicked");
+
+      var constraints = { audio: true, video: false }
+
+      navigator.mediaDevices.getUserMedia(constraints).then(function (stream) {
+        console.log("getUserMedia() success, stream created, initializing Recorder.js ...");
+
+        var audioContext = new AudioContext();
+
+        input = audioContext.createMediaStreamSource(stream);
+
+        rec = new Recorder(input, { numChannels: 1 })
+        console.log('here')
+
+        rec.record()
+
+        console.log("Recording started");
+      }).catch(function (err) {
+        console.log(err)
+      });
+    }
+
+    function pauseRecording() {
+      console.log("pauseButton clicked rec.recording=", rec.recording);
+      if (rec.recording) {
+        rec.pause();
+        pauseButton.innerHTML = "Resume";
+      } else {
+        rec.record()
+        pauseButton.innerHTML = "Pause";
+      }
+    }
+
+    function stopRecording() {
+      console.log("stopButton clicked");
+      pauseButton.innerHTML = "Pause";
+      rec.stop();
+      stream.getAudioTracks()[0].stop();
+      rec.exportWAV(createDownloadLink);
+    }
+
+    function createDownloadLink(blob) {
+      var url = URL.createObjectURL(blob);
+      var au = document.createElement('audio');
+      var li = document.createElement('li');
+      var link = document.createElement('a');
+      var filename = new Date().toISOString();
+      au.controls = true;
+      au.src = url;
+      link.href = url;
+      link.download = filename + ".mp3";
+      link.innerHTML = "Save to disk";
+      li.appendChild(au);
+      li.appendChild(document.createTextNode(filename + ".mp3 "))
+      li.appendChild(link);
+      var upload = document.createElement('a');
+      upload.href = "#";
+      upload.innerHTML = "Upload";
+      upload.addEventListener("click", function (event) {
+        var xhr = new XMLHttpRequest();
+        xhr.onload = function (e) {
+          if (this.readyState === 4) {
+            console.log("Server returned: ", e.target.responseText);
+          }
+        };
+        var formData = new FormData();
+        formData.append("audio_data", blob, filename);
+        xhr = new XMLHttpRequest();
+        xhr.open("POST", "/audio", true);
+        xhr.send(formData);
+      });
+      li.appendChild(document.createTextNode(" "))
+      li.appendChild(upload)
+      recordingsList.appendChild(li);
+    }
+    function sendData(){
+        rec.stop();
+        recorder.exportWAV(function(audioData) {
+          
+          var xhr = new XMLHttpRequest();
+          xhr.open("POST", "/audio", true);
+          xhr.send(audioData);
+        });
+      }
+
+  </script> -->
+  
+  <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+  <script type="javascript" src="{{url_for('static', filename='js/recorder.js')}}"></script>
+  <script type="javascript" src="ITD1 /tests/node_modules/recorder.js/dist/recorder.min.js"></script>
+  <script type="javascript" src="{{url_for('static', filename='js/recorder.swf')}}"></script>
+
+</body>
+
+</html>
