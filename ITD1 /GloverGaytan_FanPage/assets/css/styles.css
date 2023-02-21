@@ -1,0 +1,56 @@
+body {
+    background: rgb(25, 19, 41);
+    background: linear-gradient(100deg, rgba(25, 19, 41, 1) 27%, rgba(140, 100, 117, 1) 71%, rgba(237, 237, 238, 1) 100%);
+}
+p {
+    color: #ededee;
+    text-shadow: 1px 1px 2px #000;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+span {
+    color: #4F4174;
+    text-shadow: 1px 1px 2px aliceblue;
+}
+
+.size {
+    height: 4rem;
+
+}
+
+#symbol {
+    max-width: 600px;
+    position: relative;
+    text-align: center;
+    margin: 20px auto;
+    position: relative;
+    font-size: 40px;
+    
+}
+
+#symbol:before {
+    content: "";
+    display: block;
+    width: 48vw;
+    height: 2px;
+    background: #352b7b;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    z-index: -3;
+}
+
+#symbol:after {
+    content: "";
+    display: block;
+    width: 48vw;
+    height: 2px;
+    background: #352b7b;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    z-index: -3;
+}
+
