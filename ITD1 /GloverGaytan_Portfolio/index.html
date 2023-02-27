@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/b65386d079.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+        integrity="sha512-DdNkk/t47+CcUPfDp9G6VbUZ1Ilj8f/wW6wwJJF6w2Qj/OvU6OJU0dkY77qP3MYgZvax8jivW99R0e7wE5iPvA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <title>Gaytan's Portfolio</title>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Navigation section -->
+    <header class="bg-purple-600 py-4 md:py-4">
+        <div class="container mx-auto flex items-center justify-between md:flex md:justify-between md:items-end">
+            <a href="#" class="text-white font-bold text-xl">Gaytan's Portfolio</a>
+            <div class="flex items-center md:hidden">
+                <button id="mobile-menu-button" class="p-2 text-purple-200 items-end">
+                    <i class="fas fa-bars text-3xl"></i>
+                </button>
+            </div>
+            <div class="hidden md:block">
+                <ul class="md:flex md:space-x-10 text-white">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#work-examples">Work Examples</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div id="mobile-menu" class="pt-24 hidden md:hidden bg-purple-600 text-white">
+        <ul class="py-4 px-6 space-y-4">
+            <li><a href="#about">About</a></li>
+            <li><a href="#work-examples">Work Examples</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+
+    <!-- About section -->
+    <section id="about" class="py-12">
+        <div class="container mx-auto flex flex-col  items-center md:items-center xl:items-center">
+            <img id="pro" class="mt-16 w-32 h-32 md:w-48 md:h-auto rounded-full mx-auto md:mx-0"
+                src="assets/img/face.png" alt="Profile Picture">
+            <h2 class="text-4xl font-bold xl:px-8 ">Gaytan Glover Jr.</h2>
+        </div>
+        <div class="container mx-auto flex flex-col  items-center md:items-center xl:items-center">
+            <p class="text-gray-700 font-bold text-center pt-7">I'm a web developer with expertise in Django, Python, and JavaScript. With over [insert number] years of experience, I've developed a strong understanding of web development principles and practices, and I'm always striving to learn and grow in this rapidly evolving field.
+
+                I'm particularly passionate about creating responsive, dynamic web applications that meet the needs of my clients and their users. I specialize in leveraging Django to build robust, scalable backends that power fast, reliable web applications, while also incorporating JavaScript to create engaging, interactive user interfaces.</p>
+        </div>
+    </section>
+
+    <!-- Work Examples section -->
+    <section id="work-examples" class=" ">
+        
+        <div class="container mx-auto flex flex-col items-center">
+            <h2 class="text-2xl font-bold text-center mb-8">Work Examples</h2>
+            <div id="carousel" class="carousel">
+                <div class="carousel-item text-center ">
+                    <a href="https://raw.githack.com/violette-git/fullsail/main/ITD1%20/GloverGaytan_Responsive/index.html">
+                        <img  id="pro-1" src="assets/img/burger.png" alt="Project 1">
+                    </a>
+                    <div class="mt-10">
+
+                        <span class="text-2xl font-bold">Static Burger Restaurant Html Page</span>
+                    </div>
+                </div>
+                <div class="carousel-item text-center">
+                    <a href="https://raw.githack.com/violette-git/fullsail/main/ITD1%20/GloverGaytan_FanPage/index.html">
+                        <img id="pro-2" src="assets/img/code.png" alt="Project 2">
+                    </a>
+                    <div class="mt-10">
+
+                        <span class="text-2xl font-bold">Fan Page Made with Tailwind Css</span>
+                    </div>
+                </div>
+                <div class="carousel-item text-center">
+                    <a href="https://pokee.herokuapp.com/">
+                        <img id="pro-3" src="assets/img/poke.png" alt="Project 3">
+                    </a>
+                    <div class="mt-10">
+                        <span class="text-2xl font-bold">Original 150 Pokedex Made with Python And Django</span>
+
+                    </div>
+                    
+                </div>
+                <div class="carousel-item text-center">
+                    <a href="https://witness2.tech/">
+                        <img id="pro-4" src="assets/img/wit.png" alt="Project 4">
+                    </a>
+                    <div class="mt-10">
+
+                        <span class="text-2xl font-bold">Donation and Giving App created with Django and Python.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="lr-b" class="flex justify-center mt-8">
+            <button id="left-b"
+                class="carousel-prev px-4 py-2 mr-4 bg-purple-600 text-white rounded-full focus:outline-none"><i
+                    class="fas fa-chevron-left text-2xl"></i></button>
+            <button id="right-b"
+                class="carousel-next px-4 py-2 bg-purple-600 text-white rounded-full focus:outline-none"><i
+                    class="fas fa-chevron-right text-2xl"></i></button>
+        </div>
+    </section>
+
+    <!-- Skills section -->
+    <section id="skills" class="py-12">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8">Skills</h2>
+            <div class="grid grid-cols-2 gap-8 ">
+                <div class="flex flex-col items-center">
+                    <h3 class="text-2xl font-bold mb-4">Technical Skills</h3>
+                    <ul class="list-disc list-inside font-bold">
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>React</li>
+                        <li>Django</li>
+                        <li>Python</li>
+                        <li>Node.js</li>
+                        <li>Git</li>
+                    </ul>
+                </div>
+                <div class="flex flex-col items-center">
+                    <h3 class="text-2xl font-bold mb-4">Soft Skills</h3>
+                    <ul class="list-disc list-inside font-bold">
+                        <li>Teamwork</li>
+                        <li>Communication</li>
+                        <li>Problem-solving</li>
+                        <li>Time management</li>
+                        <li>Attention to detail</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact section -->
+    <section id="contact" class="py-12">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8">Contact</h2>
+            <div class="flex justify-center">
+                <div class="max-w-md w-full">
+                    <form class="bg-white shadow-lg rounded px-8 pt-6 pb-8 mb-4">
+                        <div class="mb-4">
+                            <label class="block text-2xl text-center text-gray-700 font-bold mb-2" for="name">
+                                Name
+                            </label>
+                            <input
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                id="name" type="text" placeholder="Name">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-2xl text-center text-gray-700 font-bold mb-2" for="email">
+                                Email
+                            </label>
+                            <input
+                                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                id="email" type="email" placeholder="Email">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-2xl text-center text-gray-700 font-bold mb-2" for="message">
+                                Message
+                            </label>
+                            <textarea
+                                class="shadow appearance-none  border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                                id="message" placeholder="Message"></textarea>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <button
+                                class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                                type="button">
+                                Send
+                            </button>
+                        </div>
+                    </form>
+                    <div class="flex justify-center">
+                        <ul class="flex space-x-4">
+                            <li><a href="https://github.com/violette-git"><i
+                                        class="fab fa-github text-gray-700 text-3xl hover:text-purple-600 hover:text-4xl"></i></a></li>
+                            <li><a href="https://linkedin.com/in/grant-glover-jr"><i
+                                        class="fab fa-linkedin text-gray-700 text-3xl hover:text-purple-600 hover:text-4xl"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"
+        integrity="sha512-SRmI2SbKj1lkIxgbv48lnCpVq3/U4L4vyd9XvLZCCY+ZSbSjKkMvnkOa+zmO4yq4q70xKjX9e9D0VYPMZfH8pw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- JavaScript for carousel -->
+    <script src="assets/js/carousel.js"></script>
+</body>
+
+</html>

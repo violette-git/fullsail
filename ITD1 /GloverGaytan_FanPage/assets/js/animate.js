@@ -14,7 +14,7 @@ console.log(hand)
 
 let blackScreen = document.querySelector('.black-screen');
 let centeredImage = document.querySelector('.centered-image');
-let img2 = centeredImage.querySelector('img');
+let img2 = centeredImage.querySelectorAll('img');
 
 gsap.set(img, {
     opacity: 0.4,

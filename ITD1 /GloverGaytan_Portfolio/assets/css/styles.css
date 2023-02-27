@@ -1,0 +1,64 @@
+
+
+
+
+
+html {
+    width: 100%;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+}
+body {
+    background-image: url("/GloverGaytan_Portfolio/assets/img/funky-lines.png");
+    background-repeat: repeat;
+    font-family: 'Courier New', Courier, monospace;
+}
+textarea {
+    resize: none;
+}
+
+@media (min-width: 768px) {
+    #mobile-menu {
+      display: none;
+    }
+}
+
+header {
+    position:fixed;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    z-index: 1;
+}
+
+#test {
+    background-color: aqua;
+    max-width: 1400px
+}
+
+#pro-1 {
+    width: 50vw;
+    border-radius: 4px;
+    margin: 0;
+}
+
+#pro-2 {
+    width: 50vw;
+    border-radius: 4px;
+    
+}
+
+#pro-3 {
+    width: 50vw;
+    border-radius: 4px;
+}
+
+#pro-4 {
+    width: 50vw;
+    border-radius: 4px;
+}
+
+#holds {
+    border: 4px solid #1a1a1a;
+    width: 60vw;
+}
